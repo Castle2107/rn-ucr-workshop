@@ -1,10 +1,17 @@
-import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import React from 'react';
+import { Text, StyleSheet, View, FlatList } from 'react-native';
+import { PokemonListItem } from '../components/PokemonListItem';
+import { Pokemons } from '../models/Pokemon';
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <FlatList
+        columnWrapperStyle={styles.pokemonList}
+        data={Pokemons}
+        renderItem={PokemonListItem}
+        numColumns={2}
+      />
     </View>
   );
 };
@@ -12,7 +19,10 @@ export const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pokemonList: {
+    justifyContent: 'space-between',
   },
 });
