@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   typeIcon: {
     width: 16,
     height: 16,
-    backgroundColor: '#00FF00',
+    backgroundColor: '#00FF00', // TODO: Change this to the actual color
     borderRadius: 16,
   },
   typeTitle: {

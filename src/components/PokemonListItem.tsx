@@ -4,43 +4,52 @@ import { PokemonTypeItem } from './PokemonTypeItem';
 
 export const PokemonListItem = ({ item }: { item: Pokemon }) => {
   return (
-    <View style={styles.mainCardView}>
-      <View style={styles.pokemonImageContainer}>
-        <Image style={styles.pokemonImage} source={{ uri: item.imageURL }} />
-      </View>
+    <View style={styles.cardWrapper}>
+      <View style={styles.cardContainer}>
+        <View style={styles.pokemonImageContainer}>
+          <Image style={styles.pokemonImage} source={{ uri: item.imageURL }} />
+        </View>
 
-      <View style={styles.pokemonDetailsContainer}>
-        <Text style={styles.pokemonName}>{item.name}</Text>
-        <Text style={styles.pokemonNumber}>
-          #{item.id.toString().padStart(4, '0')}
-        </Text>
-        <PokemonTypeItem name={item.types[0].name} imageURL={''} />
-        <View style={styles.separator} />
-        {item.types[1] && (
-          <PokemonTypeItem name={item.types[1].name} imageURL={''} />
-        )}
+        <View style={styles.pokemonDetailsContainer}>
+          <Text style={styles.pokemonName}>{item.name}</Text>
+          <Text style={styles.pokemonNumber}>
+            #{item.id.toString().padStart(4, '0')}
+          </Text>
+          <PokemonTypeItem name={item.types[0].name} imageURL={''} />
+          <View style={styles.separator} />
+          {item.types[1] && (
+            <PokemonTypeItem name={item.types[1].name} imageURL={''} />
+          )}
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  mainCardView: {
+  cardWrapper: {
     height: 256,
     width: 156,
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    backgroundColor: '#F5F5F5',
     borderRadius: 8,
-    shadowColor: '#0000001A',
+    shadowColor: '#0000002A',
     shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
     shadowRadius: 4,
     elevation: 8,
     margin: 8,
   },
+  cardContainer: {
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    overflow: 'hidden',
+    borderRadius: 8,
+  },
   pokemonImageContainer: {
     height: '50%',
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: '#F5F5F5',
   },
   pokemonImage: {
     width: 112,
