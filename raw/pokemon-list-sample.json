@@ -2,7 +2,7 @@
   {
     "name": "Bulbasaur",
     "id": 1,
-    "types": [{"name": "grass"}],
+    "types": [{"name": "electric"}],
     "imageURL":
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
   },
@@ -19,7 +19,7 @@
   {
     "name": "Venusaur",
     "id": 3,
-    "types": [{"name": "grass"}],
+    "types": [{"name": "grass"}, {"name": "water"}],
     "imageURL":
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
   }

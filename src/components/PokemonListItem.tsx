@@ -17,11 +17,9 @@ export const PokemonListItem = ({ item }: { item: Pokemon }) => {
         <View style={styles.pokemonDetailsContainer}>
           <Text style={styles.pokemonName}>{item.name}</Text>
           <Text style={styles.pokemonNumber}>{formatPokemonId(item.id)}</Text>
-          <PokemonTypeItem name={item.types[0].name} imageURL={''} />
+          <PokemonTypeItem name={item.types[0].name} />
           <View style={styles.separator} />
-          {item.types[1] && (
-            <PokemonTypeItem name={item.types[1].name} imageURL={''} />
-          )}
+          {item.types[1] && <PokemonTypeItem name={item.types[1].name} />}
         </View>
       </View>
     </View>

@@ -1,16 +1,15 @@
 import { View, Image, Text, StyleSheet } from 'react-native';
+import { PokemonTypeAssets, PokemonTypeIcon } from '../models/Pokemon';
 
-export const PokemonTypeItem = ({
-  name,
-  imageURL,
-}: {
-  name: string;
-  imageURL: string; // TODO: Seems like the type icon does not come from the API, change this to a resource and add a background color parameter
-}) => {
+function capitalizeFirstLetter(value: string) {
+  return value[0].toUpperCase() + value.slice(1);
+}
+
+export const PokemonTypeItem = ({ name }: { name: string }) => {
   return (
     <View style={styles.container}>
-      <Image style={styles.typeIcon} source={{ uri: imageURL }} />
-      <Text style={styles.typeTitle}>{name}</Text>
+      <Image style={styles.typeIcon} source={PokemonTypeIcon[name]} />
+      <Text style={styles.typeTitle}>{capitalizeFirstLetter(name)}</Text>
     </View>
   );
 };
@@ -23,11 +22,10 @@ const styles = StyleSheet.create({
   typeIcon: {
     width: 16,
     height: 16,
-    backgroundColor: '#00FF00', // TODO: Change this to the actual color
     borderRadius: 16,
   },
   typeTitle: {
-    // TODO: This font has a padding in the bottom, causing the views to not center correctly, is there a way to remove the padding?
+    marginTop: 2,
     fontSize: 12,
     marginStart: 8,
   },
