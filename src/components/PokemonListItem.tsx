@@ -2,6 +2,10 @@ import { View, StyleSheet, Image, Text } from 'react-native';
 import { Pokemon } from '../models/Pokemon';
 import { PokemonTypeItem } from './PokemonTypeItem';
 
+function formatPokemonId(id: number) {
+  return '#' + id.toString().padStart(4, '0');
+}
+
 export const PokemonListItem = ({ item }: { item: Pokemon }) => {
   return (
     <View style={styles.cardWrapper}>
@@ -12,9 +16,7 @@ export const PokemonListItem = ({ item }: { item: Pokemon }) => {
 
         <View style={styles.pokemonDetailsContainer}>
           <Text style={styles.pokemonName}>{item.name}</Text>
-          <Text style={styles.pokemonNumber}>
-            #{item.id.toString().padStart(4, '0')}
-          </Text>
+          <Text style={styles.pokemonNumber}>{formatPokemonId(item.id)}</Text>
           <PokemonTypeItem name={item.types[0].name} imageURL={''} />
           <View style={styles.separator} />
           {item.types[1] && (
@@ -60,7 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     height: '50%',
     width: '100%',
-    flex: 1,
   },
   pokemonName: {
     fontSize: 16,
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontWeight: '400',
     color: '#6D6D6D',
-    marginBottom: 16,
+    marginBottom: 24,
   },
   separator: {
     height: 8,

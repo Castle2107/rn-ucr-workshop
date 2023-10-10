@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text, StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList } from 'react-native';
 import { PokemonListItem } from '../components/PokemonListItem';
-import { Pokemons } from '../models/Pokemon';
+import { Pokemon, getPokemons } from '../models/Pokemon';
+
+const renderPokemon = ({ item }: { item: Pokemon }) => {
+  return PokemonListItem({ item: item });
+};
 
 export const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
         columnWrapperStyle={styles.pokemonList}
-        data={Pokemons}
-        renderItem={PokemonListItem}
+        data={getPokemons()}
+        renderItem={renderPokemon}
         numColumns={2}
       />
     </View>
