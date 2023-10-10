@@ -12,6 +12,5 @@ export type Pokemon = {
 };
 
 export function getPokemons(): Pokemon[] {
-  console.log(pokemonData);
   return pokemonData as Pokemon[];
 }
