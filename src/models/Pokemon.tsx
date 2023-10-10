@@ -1,3 +1,4 @@
+import { ImageURISource } from 'react-native';
 import pokemonData from '../../raw/pokemon-list-sample.json';
 
 export type PokemonType = {
@@ -9,13 +10,15 @@ export type Pokemon = {
   id: number;
   types: PokemonType[];
   imageURL: string;
+  height: number;
+  weight: number;
 };
 
 export function getPokemons(): Pokemon[] {
   return pokemonData as Pokemon[];
 }
 
-export const PokemonTypeAssets: { [key: string]: string } = {
+export const PokemonTypeAssets: { [key: string]: ImageURISource } = {
   bug: require('../assets/PokemonTypeIconBug.png'),
   dark: require('../assets/PokemonTypeIconDark.png'),
   dragon: require('../assets/PokemonTypeIconDragon.png'),
@@ -36,7 +39,7 @@ export const PokemonTypeAssets: { [key: string]: string } = {
   water: require('../assets/PokemonTypeIconWater.png'),
 };
 
-export const PokemonTypeIcon: { [key: string]: string } = {
+export const PokemonTypeIcon: { [key: string]: ImageURISource } = {
   bug: PokemonTypeAssets.bug,
   dark: PokemonTypeAssets.dark,
   dragon: PokemonTypeAssets.dragon,

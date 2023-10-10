@@ -1,15 +1,20 @@
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 import { Pokemon } from '../models/Pokemon';
 import { PokemonTypeItem } from './PokemonTypeItem';
+import { formatPokemonId } from '../utils/utils';
 
-function formatPokemonId(id: number) {
-  return '#' + id.toString().padStart(4, '0');
-}
-
-export const PokemonListItem = ({ item }: { item: Pokemon }) => {
+export const PokemonListItem = ({
+  item,
+  callback,
+}: {
+  item: Pokemon;
+  callback: (pokemonId: number) => void;
+}) => {
   return (
     <View style={styles.cardWrapper}>
-      <View style={styles.cardContainer}>
+      <TouchableOpacity
+        style={styles.cardContainer}
+        onPress={() => callback(item.id)}>
         <View style={styles.pokemonImageContainer}>
           <Image style={styles.pokemonImage} source={{ uri: item.imageURL }} />
         </View>
@@ -21,7 +26,7 @@ export const PokemonListItem = ({ item }: { item: Pokemon }) => {
           <View style={styles.separator} />
           {item.types[1] && <PokemonTypeItem name={item.types[1].name} />}
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 };
