@@ -1,6 +1,6 @@
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { View, StyleSheet, Text, Image } from 'react-native';
-import { NavigationIdentifier, RootStackParams } from '../navigators';
+import { RootStackParams } from '../navigators';
 import { getPokemons } from '../models/Pokemon';
 import {
   formatPokemonHeight,
@@ -8,6 +8,7 @@ import {
   formatPokemonWeight,
 } from '../utils/utils';
 import { PokemonTypeItem } from '../components/PokemonTypeItem';
+import { NavigationIdentifier } from '../navigators/Identifiers';
 
 const PokemonExtraDetails = ({
   height,
@@ -65,6 +66,15 @@ export const PokemonDetailsScreen = () => {
       </View>
       <Text style={styles.pokemonName}>{pokemon.name}</Text>
       <Text style={styles.pokemonId}>{formatPokemonId(pokemon.id)}</Text>
+
+      <Text style={styles.overViewTitle}>OVERVIEW</Text>
+      <Text style={styles.overViewText}>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </Text>
+
       <View style={styles.extraDetailsWrapper}>
         <PokemonExtraDetails
           height={pokemon.height}
@@ -97,11 +107,26 @@ const styles = StyleSheet.create({
     height: 160,
   },
   pokemonName: {
-    marginVertical: 16,
+    marginTop: 16,
     fontSize: 24,
+    fontWeight: '700',
   },
   pokemonId: {
     fontSize: 16,
+    fontWeight: '300',
+    marginTop: 8,
+  },
+  overViewTitle: {
+    fontWeight: '700',
+    fontSize: 16,
+    color: '#6D6D6D',
+    marginTop: 16,
+  },
+  overViewText: {
+    fontSize: 16,
+    color: '#323232',
+    marginTop: 8,
+    textAlign: 'justify',
   },
   extraDetailsWrapper: {
     flexDirection: 'row',

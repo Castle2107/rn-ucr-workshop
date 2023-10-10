@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { HomeScreen } from '../screens';
 import { PokemonDetailsScreen } from '../screens/PokemonDetailsScreen';
+import { NavigationIdentifier } from './Identifiers';
 
 export type RootStackParams = {
   HomeScreen: undefined;
@@ -10,11 +11,6 @@ export type RootStackParams = {
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
-
-export enum NavigationIdentifier {
-  HomeScreen = 'HomeScreen',
-  PokemonDetailsScreen = 'PokemonDetailsScreen',
-}
 
 export const RootStackNavigator = () => {
   return (

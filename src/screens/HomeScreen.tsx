@@ -4,7 +4,8 @@ import { PokemonListItem } from '../components/PokemonListItem';
 import { Pokemon, getPokemons } from '../models/Pokemon';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { NavigationIdentifier, RootStackParams } from '../navigators';
+import { RootStackParams } from '../navigators';
+import { NavigationIdentifier } from '../navigators/Identifiers';
 
 const renderPokemon = ({
   item,
