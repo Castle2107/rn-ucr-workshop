@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Bulbasaur",
+    "id": 1,
+    "types": [{"name": "electric"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Ivysaur",
+    "id": 2,
+    "types": [
+      {"name": "grass"},
+      {"name": "normal"}
+    ],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 3,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  }
+]
