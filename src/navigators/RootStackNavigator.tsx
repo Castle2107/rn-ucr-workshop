@@ -1,29 +1,25 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { HomeScreen } from '../screens';
-import { PokemonDetailsScreen } from '../screens/PokemonDetailsScreen';
 import { NavigationIdentifier } from './Identifiers';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { RootTabsNavigator, RootTabsParams } from './RootTabsNavigator';
 
 export type RootStackParams = {
-  HomeScreen: undefined;
-  PokemonDetailsScreen: { pokemonId: number };
+  RootTabs: BottomTabNavigationProp<RootTabsParams>;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
 
 export const RootStackNavigator = () => {
   return (
-    <Stack.Navigator id="HomeStackNavigator" initialRouteName="HomeScreen">
+    <Stack.Navigator
+      id="RootStackNavigator"
+      initialRouteName={NavigationIdentifier.RootTabs}
+      screenOptions={{ headerShown: false }}>
       <Stack.Screen
-        name={NavigationIdentifier.HomeScreen}
-        options={{ title: 'Pokédex', headerTitleAlign: 'left' }}
-        component={HomeScreen}
-      />
-      <Stack.Screen
-        name={NavigationIdentifier.PokemonDetailsScreen}
-        options={{ title: 'Pokemon Details' }}
-        component={PokemonDetailsScreen}
+        name={NavigationIdentifier.RootTabs}
+        component={RootTabsNavigator}
       />
     </Stack.Navigator>
   );
