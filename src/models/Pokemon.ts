@@ -1,24 +1,25 @@
 import { ImageURISource } from 'react-native';
+
 import pokemonData from '../../raw/pokemon-list-sample.json';
 
-export type PokemonType = {
+export interface PokemonType {
   name: string;
-};
+}
 
-export type Pokemon = {
+export interface Pokemon {
   name: string;
   id: number;
   types: PokemonType[];
   imageURL: string;
   height: number;
   weight: number;
-};
+}
 
-export function getPokemons(): Pokemon[] {
+export function getPokemonList(): Pokemon[] {
   return pokemonData as Pokemon[];
 }
 
-export const PokemonTypeAssets: { [key: string]: ImageURISource } = {
+const PokemonTypeAssets: { [key: string]: ImageURISource } = {
   bug: require('../assets/PokemonTypeIconBug.png'),
   dark: require('../assets/PokemonTypeIconDark.png'),
   dragon: require('../assets/PokemonTypeIconDragon.png'),

@@ -1,12 +1,13 @@
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { View, StyleSheet, Text, Image } from 'react-native';
-import { RootStackParams } from '../navigators';
-import { getPokemons } from '../models/Pokemon';
+
+import { HomeStackParams } from '../navigators';
+import { getPokemonList } from '../models/Pokemon';
 import {
   formatPokemonHeight,
   formatPokemonId,
   formatPokemonWeight,
-} from '../utils/utils';
+} from '../utils/pokemonUtils';
 import { PokemonTypeItem } from '../components/PokemonTypeItem';
 import { NavigationIdentifier } from '../navigators/Identifiers';
 
@@ -19,6 +20,7 @@ const PokemonExtraDetails = ({
   weight: number;
   types: string[];
 }) => {
+  // RENDERS
   return (
     <View style={styles.extraDetailsContainer}>
       <View style={styles.extraDetailsColumn}>
@@ -52,13 +54,17 @@ const PokemonExtraDetails = ({
 };
 
 export const PokemonDetailsScreen = () => {
+  // HOOKS
   const route =
     useRoute<
-      RouteProp<RootStackParams, NavigationIdentifier.PokemonDetailsScreen>
+      RouteProp<HomeStackParams, NavigationIdentifier.PokemonDetailsScreen>
     >();
-  const pokemonId = route.params.pokemonId;
-  const pokemon = getPokemons()[pokemonId - 1];
 
+  // LOCAL VARIABLES
+  const pokemonId = route.params.pokemonId;
+  const pokemon = getPokemonList()[pokemonId];
+
+  // RENDERS
   return (
     <View style={styles.container}>
       <View style={styles.pokemonImageContainer}>

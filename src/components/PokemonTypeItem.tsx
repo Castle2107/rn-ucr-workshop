@@ -1,15 +1,16 @@
 import { View, Image, Text, StyleSheet } from 'react-native';
-import { PokemonTypeAssets, PokemonTypeIcon } from '../models/Pokemon';
+import { PokemonTypeIcon } from '../models/Pokemon';
+import { FC } from 'react';
 
-function capitalizeFirstLetter(value: string) {
-  return value[0].toUpperCase() + value.slice(1);
+interface PokemonTypeItemProps {
+  name: string;
 }
 
-export const PokemonTypeItem = ({ name }: { name: string }) => {
+export const PokemonTypeItem: FC<PokemonTypeItemProps> = ({ name }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.typeIcon} source={PokemonTypeIcon[name]} />
-      <Text style={styles.typeTitle}>{capitalizeFirstLetter(name)}</Text>
+      <Text style={styles.typeTitle}>{name}</Text>
     </View>
   );
 };
@@ -28,5 +29,6 @@ const styles = StyleSheet.create({
     marginTop: 2,
     fontSize: 12,
     marginStart: 8,
+    textTransform: 'capitalize',
   },
 });

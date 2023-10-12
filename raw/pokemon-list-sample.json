@@ -28,5 +28,68 @@
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
     "height": 18,
     "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 4,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 5,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 6,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 7,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 8,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 9,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
+  },
+  {
+    "name": "Venusaur",
+    "id": 10,
+    "types": [{"name": "grass"}, {"name": "water"}],
+    "imageURL":
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 18,
+    "weight": 28
   }
 ]
